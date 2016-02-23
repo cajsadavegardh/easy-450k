@@ -2,6 +2,7 @@
 import argparse
 import os
 import subprocess as sp
+import yaml
 
 template_extension = ".tmpl"
 scripts_dir_name = "Scripts"
@@ -47,10 +48,10 @@ if not os.path.exists(template_path) or os.path.isdir(template_path):
 os.mkdir(project_dir)
 
 # go through all the files and create a subdir for each of them
-template_lines = [line.rstrip('\n') for line in open(template_path)]
-for template_line in template_lines:
-    template_dir_path = os.path.join(project_dir, template_line)
-    print(creating_directory_message(os.path.join(project_name, template_line)))
+yaml_template = yaml.load(open(template_path))
+for directory in yaml_template['directories']:
+    template_dir_path = os.path.join(project_dir, directory)
+    print(creating_directory_message(os.path.join(project_name, directory)))
     os.mkdir(template_dir_path)
 
 # initialize git repo if scripts dir exists
