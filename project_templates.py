@@ -19,11 +19,11 @@ underline_col = '\033[4m'
 
 
 def creating_directory_message(directory_name):
-    return green_col + "[Creating project directory]: " + blue_col + directory_name + endc_col
+    return green_col + "  [Creating project directory]: " + blue_col + directory_name + endc_col
 
 
 def creating_file_message(file_name):
-    return green_col + "[Creating file]: " + blue_col + file_name + endc_col
+    return green_col + "  [Creating file]: " + blue_col + file_name + endc_col
 
 
 def section_message(section_name):
