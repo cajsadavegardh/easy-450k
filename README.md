@@ -1,23 +1,39 @@
 # project-templates
 
-This project is a core of the code that will be use to automate pipeline creation.
-Each pipeline creation project will be a fork of this code. 
-
+This project is an automated pipeline creator for various project types.
+It's goal is for a user to delegate repetitive tasks of initiating a new project to the Program.
+It is (will) be able to create a project structure, a set of scripts, and a Makefile.
+This scripts will perform common analysis tasks like preprocessing, normalizing and analyzing all sorts of bioinformatic data by simply calling the Makefile.
 
 ### Design idea ###
 
-Each automated pipeline creation project is going to share the same core base.
-However, it makes no sense to keep all this projects as a branch 
+Each project template will have a template file (f.e. templates/illumina_450k.tmpl) and a dedicated folder (f.e. files/illumina_450k).
+Each folder and template for the same project should have the same name.
 
-Create new project pt-${your-project-name} as a fork of a current one.
-Set this repo as an upstream repo of a new one and sync:
+### Dependencies ###
 
-    # in the fork dir
-    git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
-    
-And next, sync:
-    
-    # for every branch
-    git fetch upstream 
-    git checkout master
-    git merge upstream/master
+Works with python3 only.
+
+### Installation ###
+
+Just clone the current repo.
+
+### Usage ###
+
+        python3 python_templates.py ${project-name} ${template-name}
+        
+For example:
+
+        python3 python_templates.py new-450k-project illumina-450k
+        
+### Plans ###
+
+- Project templates for the following project types:
+
+    - Illumina 450k array analysis
+    - methylation QTL
+    - DMR-based WGBS analysis
+    - RNA-seq analysis
+
+
+- Plots and report generation for project types.
