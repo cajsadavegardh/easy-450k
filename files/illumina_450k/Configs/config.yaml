@@ -20,7 +20,7 @@ phenotype_info:
   phenotype_file: asdfj.txt
   batch_column_name: asdf
   covariates:
-    logical:
+    categorical:
       - a
       - b
       - c
@@ -39,3 +39,5 @@ analyses:
   -
     methold: wilcoxon
     group: g
+
+
