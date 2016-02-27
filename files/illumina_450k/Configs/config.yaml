@@ -1,0 +1,41 @@
+sample_filtering:
+  sample_list: asdf.txt
+
+probe_filtering:
+  mean_detection: 0.01
+  rs_probes : true
+  ch_probes : true
+  snp_targets: 0.1
+  cross_reactive: 49
+  x_chr: true
+  y_chr: false
+
+normalization:
+  background_correct: true
+  adjust_color_bias: false
+  quantile_normalize: true
+  bmiq: true
+
+phenotype_info:
+  phenotype_file: asdfj.txt
+  batch_column_name: asdf
+  covariates:
+    logical:
+      - a
+      - b
+      - c
+    numeric:
+      - d
+      - e
+      - f
+  groups:
+      - g
+      - h
+
+analyses:
+  -
+    method: lm
+    covariates: a, b, c
+  -
+    methold: wilcoxon
+    group: g
