@@ -20,5 +20,5 @@ normalized_dataset <- loaded_data %>>=%
        filter_probes_default  %>>=%
        normalize_default
 
-print(res[[2]])
+print(normalized_dataset[[2]])
 saveRDS(normalized_dataset, file=output_file_path)
