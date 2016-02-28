@@ -14,7 +14,11 @@ normalization:
   background_correct: true
   adjust_color_bias: false
   quantile_normalize: true
-  bmiq: true
+
+bmiq:
+  seed: 100
+  nfit: 50000
+  n_cores: 30
 
 phenotype_info:
   phenotype_file: asdfj.txt
