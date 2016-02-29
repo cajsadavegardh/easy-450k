@@ -8,10 +8,10 @@ bmiq_params <- .get_bmiq_params(config_path)
 #---- define function calls
 bmiq_default <- .Curry(bmiq, bmiq_config=bmiq_params) #!---- change
 
-#---- run the whole pipeline
+#---- load persisted dataset
 loaded_data <- readRDS(input_file_path)
 
+#---- run the pipeline
 normalized_dataset <- loaded_data %>>=% bmiq_default
 
-print(normalized_dataset[[2]])
 saveRDS(normalized_dataset, file=output_file_path)
