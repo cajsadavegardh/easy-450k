@@ -17,7 +17,7 @@ normalize_default <- .Curry(normalize, config=normalization_config_params)
 loaded_data <- readRDS(input_file_path)
 
 normalized_dataset <- loaded_data %>>=%
-#       filter_samples_default %>>=%
+       filter_samples_default %>>=%
        filter_probes_default  %>>=%
        normalize_default
 
