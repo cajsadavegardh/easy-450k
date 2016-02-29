@@ -21,20 +21,20 @@ bmiq:
   n_cores: 30
 
 phenotype_info:
-  phenotype_file: asdfj.txt
-  batch_column_name: asdf
+  phenotype_file: Configs/phenotype_file.txt
+  batch_column: artificial_batch
+  sample_names_column: ID
   covariates:
     categorical:
-      - a
-      - b
-      - c
+      - Gender
+      - T2D
+      - artificial_categories
     numeric:
-      - d
-      - e
-      - f
-  groups:
-      - g
-      - h
+      - Purity
+      - Cultured_days
+      - BMI
+      - Hba1c
+      - Age_me
 
 analyses:
   -
