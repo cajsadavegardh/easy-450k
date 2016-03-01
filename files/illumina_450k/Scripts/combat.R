@@ -13,7 +13,7 @@ id_column_name <- get_sample_id_column_name(config_path)
 # impute phenotypes
 phenotypes_table$Hba1c[ is.na(phenotypes_table$Hba1c) ] <- mean(phenotypes_table$Hba1c, na.rm=T)
 
-combat_default <- .Curry(combat, phenotypes_table=phenotypes_table, id_column_name=id_column_name,
+combat_default <- Curry(combat, phenotypes_table=phenotypes_table, id_column_name=id_column_name,
 batch_name=batch_name, numeric_names=numeric_names, categorical_names=categorical_names)
 combat_results <- bmiq_dataset %>>=% combat_default
 saveRDS(combat_results, file=output_file_path)

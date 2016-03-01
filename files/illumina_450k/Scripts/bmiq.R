@@ -6,7 +6,7 @@ output_file_path <- "Temp/bmiq_dataset.RData"
 bmiq_params <- .get_bmiq_params(config_path)
 
 #---- define function calls
-bmiq_default <- .Curry(bmiq, bmiq_config=bmiq_params) #!---- change
+bmiq_default <- Curry(bmiq, bmiq_config=bmiq_params) #!---- change
 
 #---- load persisted dataset
 loaded_data <- readRDS(input_file_path)

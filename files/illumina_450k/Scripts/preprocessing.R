@@ -9,10 +9,10 @@ filter_config_params <- .get_filtering_params(probe_filetring_config_path)
 normalization_config_params <- .get_normalization_params(normalization_config_path)
 
 #---- define function calls
-txt_to_methylumi_default <- .Curry(txt_to_methylumi, continue_without_control_probes=T)
-filter_samples_default <- .Curry(filter_samples, samples_list_path=sample_list_path)
-filter_probes_default <- .Curry(filter_probes, config=filter_config_params)
-normalize_default <- .Curry(normalize, config=normalization_config_params)
+txt_to_methylumi_default <- Curry(txt_to_methylumi, continue_without_control_probes=T)
+filter_samples_default <- Curry(filter_samples, samples_list_path=sample_list_path)
+filter_probes_default <- Curry(filter_probes, config=filter_config_params)
+normalize_default <- Curry(normalize, config=normalization_config_params)
 
 #---- run the whole pipeline
 loaded_data <- readRDS(input_file_path)
