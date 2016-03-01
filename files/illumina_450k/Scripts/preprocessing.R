@@ -1,11 +1,12 @@
 input_file_path <- "Temp/dataset_loaded.RData"
-config_path <- "Configs/config.yaml"
+probe_filetring_config_path <- "Configs/probe_filtering.yaml"
+normalization_config_path <- "Configs/normalization.yaml"
 sample_list_path <- "Configs/analysis_samples.txt"
 output_file_path <- "Temp/preprocessed_dataset.RData"
 
 #--- load config
-filter_config_params <- .get_filtering_params(config_path)
-normalization_config_params <- .get_normalization_params(config_path)
+filter_config_params <- .get_filtering_params(probe_filetring_config_path)
+normalization_config_params <- .get_normalization_params(normalization_config_path)
 
 #---- define function calls
 txt_to_methylumi_default <- .Curry(txt_to_methylumi, continue_without_control_probes=T)

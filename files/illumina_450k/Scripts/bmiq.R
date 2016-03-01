@@ -1,5 +1,5 @@
 input_file_path <- "Temp/preprocessed_dataset.RData"
-config_path <- "Configs/config.yaml"
+config_path <- "Configs/bmiq.yaml"
 output_file_path <- "Temp/bmiq_dataset.RData"
 
 #--- load config

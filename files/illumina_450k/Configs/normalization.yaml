@@ -1,0 +1,3 @@
+background_correct: true
+adjust_color_bias: false
+quantile_normalize: true

@@ -1,0 +1,15 @@
+phenotype_file: Configs/phenotype_file.txt
+batch_column: artificial_batch
+sample_names_column: ID
+covariates:
+  categorical:
+    - Gender
+    - T2D
+    - artificial_categories
+  numeric:
+    - Purity
+    - Cultured_days
+    - BMI
+    - Hba1c
+    - Age_me
+

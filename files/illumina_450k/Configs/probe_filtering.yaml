@@ -1,0 +1,9 @@
+mean_detection: 0.01
+rs_probes : true
+ch_probes : true
+snp_targets: 0.1
+cross_reactive: 49
+x_chr: true
+y_chr: false
+
+

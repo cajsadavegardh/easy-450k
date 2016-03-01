@@ -1,5 +1,5 @@
 bmiq_dataset <- readRDS("Temp/bmiq_dataset.RData")
-config_path <- "Configs/config.yaml"
+config_path <- "Configs/phenotype_info.yaml"
 output_file_path <- "Temp/combat_results.RData"
 
 meth_matrix <- get_values(bmiq_dataset[[1]])
