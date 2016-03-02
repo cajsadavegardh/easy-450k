@@ -1,4 +1,6 @@
+library(knitr)
 library(devtools)
 devtools::load_all("~/My_Code/ffkill2/ffkill2_depl_win/")
 
 source("Scripts/config.R")
+source("Scripts/helpers.R")
