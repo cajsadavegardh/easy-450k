@@ -1,4 +1,4 @@
-# project-templates
+# Easy-450k
 
 This program creates prepared projects to analyze Illumina 450k array DNA methylation data 
 by changing a bunch of config files without using extensive programming.
