@@ -1,0 +1,20 @@
+# Illumina 450k anaysis report #
+
+### The following processing steps were performed: ###
+
+#### 1. Reading the data ####
+The file RawData/input_file.txt was read, yielding
+ `r nrow(readRDS("Temp/dataset_loaded.RData")[[1]])` probes in total.
+
+
+#### 2. Analysis pipeline details: ####
+```{r log, echo=FALSE, comment=NA}
+cat(format_log(readRDS("Temp/combat_results.RData")))
+```
+
+#### 3. Summary of the phenotypes: ####
+```{r phenotypes, echo=FALSE}
+config_path <- "Configs/phenotype_info.yaml"
+phenotypes_table <- get_phenotypes(config_path)
+kable(summary(phenotypes_table), align='l')
+```
