@@ -1,6 +1,14 @@
-library(knitr)
+library(utils)
 library(devtools)
-devtools::load_all("~/My_Code/ffkill2/ffkill2_depl_win/")
+library(knitr)
+
+##------ install bioconductor packages
+
+## check if the easy-450.core packages are availble, and istall if not
+if(!("easy-450k.core" %in% rownames(utils::installed.packages()))) {	
+    devtools::install_github("petr-volkov/easy-450k.core")
+}
+library("easy-450k-core")
 
 source("Scripts/config.R")
 source("Scripts/helpers.R")
