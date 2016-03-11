@@ -1,6 +1,6 @@
 all: Output/knitr_report.html
 
-Output/knitr_report.html: Temp/bmiq_dataset.RData Temp/preprocessed_dataset.RData Temp/dataset_loaded.RData Temp/combat_results.RData
+Output/knitr_report.html: Temp/bmiq_dataset.RData Temp/preprocessed_dataset.RData Temp/dataset_loaded.RData Temp/combat_results.RData Results/analyzed_dataset.RData
 		Rscript --no-save --no-restore --verbose Scripts/generate_knitr_report.R
 
 Temp/dataset_loaded.RData: RawData/input_file.txt Scripts/loading.R
@@ -15,4 +15,6 @@ Temp/bmiq_dataset.RData: Temp/preprocessed_dataset.RData Configs/bmiq.yaml Scrip
 Temp/combat_results.RData: Temp/bmiq_dataset.RData
 		Rscript --no-save --no-restore --verbose Scripts/combat.R
 
+Results/analyzed_dataset.RData: Temp/combat_results.RData
+		Rscript --no-save --no-restore --verbose Scripts/analysis.R
 
