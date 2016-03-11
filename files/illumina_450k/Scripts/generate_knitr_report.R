@@ -1,2 +1,3 @@
 library(knitr)
-knitr::knit2html("Scripts/report.Rmd", output="Results/knitr_report.html")
+knitr::knit2html("report.Rmd", output="Results/knitr_report.html")
+
