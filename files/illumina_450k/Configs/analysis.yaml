@@ -1,0 +1,11 @@
+type: lm
+n_cores: 46
+covariates:
+    numeric:
+        - Purity
+        - BMI
+        - Hba1c
+    categorical:
+        - Gender
+        - T2D
+
