@@ -1,8 +1,12 @@
-.get_filtering_params <- function(config_path) yaml::yaml.load_file(config_path)
+.load_yaml_config <- function(config_path) yaml::yaml.load_file(config_path)
 
-.get_normalization_params <- function(config_path) yaml::yaml.load_file(config_path)
+.get_filtering_params <- .load_yaml_config
 
-.get_bmiq_params <- function(config_path) yaml::yaml.load_file(config_path)
+.get_normalization_params <- .load_yaml_config
+
+.get_bmiq_params <- .load_yaml_config
+
+.get_analysis_params <- .load_yaml_config
 
 # Parse phenotype file configs -----
 get_phenotype_info <- function(config_path) yaml::yaml.load_file(config_path)
