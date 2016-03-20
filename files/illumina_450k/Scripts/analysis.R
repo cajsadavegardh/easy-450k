@@ -27,7 +27,7 @@ if(analysis_params$type == "lm") {
 } else if (analysis_params$type == "wilcoxon") {
     group <- get(analysis_params$group, phenotypes_table)
     group <- as.numeric(as.factor(group))
-    if(!(all(group %in% c(1, 2)))) stop("More then 2 groups provided for wilcoxon test")
+    if(!(all(group %in% c(1, 2, -1)))) stop("More then 2 groups provided for wilcoxon test")
     run_wilcoxon_default <- Curry(run_wilcoxon, n_cores=40, perform_fdr=T, group=group, paired=F, exact=F, correct=T)
     res <- combat_results %>>=% run_lm_default
 } else {

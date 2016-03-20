@@ -87,7 +87,7 @@ Example:
 ###### 4. Configs/bmiq.yaml
 Allows to define criteria to perform BMIQ color bias adjustment
 
-Available options:
+Available options (with examples):
 
 	seed: 100
 	nfit: 50000
@@ -102,7 +102,57 @@ You can additionally set any other parameters of BMIQ function.
 ###### 5. Configs/combat.yaml
 Allows to define criteria to perform Combat batch correction
 
+Config example:
+
+	phenotype_file: Configs/phenotype_file.txt
+	batch_column: Batch_Column_Name
+	sample_names_column: ID
+	covariates:
+	categorical:
+    - CategoricalA_Column_Name
+    - CategoricalB_Column_Name
+	numeric:
+	- NumericA_Column_Name
+	- NumericB_Column_Name
+	- NumericC_Column_Name	
+
+The program will load the file Configs/phenotype_file.txt. Phenotype file should be a tab 
+separated text file, with phenotypes and other variables of interest as columns, and samples as raws.
+Sample\_names\_column should correspond to a subset of sample names of the original GenomeStudio file.
+It is used to match phenotypes to samples, so it is important for it to be correct.
+
+###### 6. Configs/analysis.yaml
+
+There are currently 2 analysis options, wilcoxon test and linear regression model (more tests will be added in the future).
+
+For wilcoxon test, make the config file that looks like this:
+
+	type: wilcoxon
+	n_cores: 5
+	group: CaseControl_Column_Name
+	paired: false
+	
+	
+Column with CategoricalA\_Column\_Name should contain only the following values: 1, 2, -1.
+Samples with value 1 will be tested against samples with value 2. 
+If paired is set up to true, paires will be determined by the order of samples in both vectors.
+
+For linear regression tests, use the following:
+
+	type: lm
+	n_cores: 46
+	covariates:
+    numeric:
+		- CategoricalA_Column_Name
+		- CategoricalB_Column_Name
+		- CategoricalC_Column_Name
+    categorical:
+		- NumericA_Column_Name
+		- NumericB_Column_Name
+
+This is file can be the same as Configs/combat.yaml, but it is not always the case. 
+Therefore, 2 perhaps very similar config files are needed, to avoid more complex logic.
 
 
 
-        
+	

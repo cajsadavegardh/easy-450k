@@ -12,9 +12,8 @@ Temp/preprocessed_dataset.RData: Temp/dataset_loaded.RData Configs/probe_filteri
 Temp/bmiq_dataset.RData: Temp/preprocessed_dataset.RData Configs/bmiq.yaml Scripts/bmiq.R
 		Rscript --no-save --no-restore --verbose Scripts/bmiq.R
 
-Temp/combat_results.RData: Temp/bmiq_dataset.RData
+Temp/combat_results.RData: Temp/bmiq_dataset.RData Scripts/combat.R
 		Rscript --no-save --no-restore --verbose Scripts/combat.R
 
-Results/analyzed_dataset.RData: Temp/combat_results.RData
+Results/analyzed_dataset.RData: Temp/combat_results.RData Configs/analysis.yaml Scripts/analysis.R
 		Rscript --no-save --no-restore --verbose Scripts/analysis.R
-
