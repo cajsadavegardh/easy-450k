@@ -1,15 +1,16 @@
 library(utils)
 library(devtools)
 library(knitr)
-library(methylumi)
+suppressWarnings(suppressMessages(library(methylumi)))
 
 ##------ install bioconductor packages
 
 ## check if the easy-450.core packages are availble, and istall if not
-if(!("easy.450k.core" %in% rownames(utils::installed.packages()))) {	
+if(!("easy.450k.core" %in% rownames(utils::installed.packages()))) {
     devtools::install_github("petr-volkov/easy-450k.core")
 }
 suppressWarnings(suppressMessages(library("easy.450k.core")))
 
 source("Scripts/config.R")
 source("Scripts/helpers.R")
+source("Scripts/defaults.R")
