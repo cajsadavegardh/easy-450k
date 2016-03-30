@@ -117,7 +117,7 @@ Config example:
 	- NumericC_Column_Name	
 
 The program will load the file Configs/phenotype_file.txt. Phenotype file should be a tab 
-separated text file, with phenotypes and other variables of interest as columns, and samples as raws.
+separated text file, with phenotypes and other variables of interest as columns, and samples as rows.
 Sample\_names\_column should correspond to a subset of sample names of the original GenomeStudio file.
 It is used to match phenotypes to samples, so it is important for it to be correct.
 
