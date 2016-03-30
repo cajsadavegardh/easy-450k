@@ -121,7 +121,7 @@ separated text file, with phenotypes and other variables of interest as columns,
 Sample\_names\_column should correspond to a subset of sample names of the original GenomeStudio file.
 It is used to match phenotypes to samples, so it is important for it to be correct.
 
-###### 6. Configs/analysis.yaml
+###### 6. Configs/analysis.yaml                   I can't find this file here/Cajsa
 
 There are currently 2 analysis options, wilcoxon test and linear regression model (more tests will be added in the future).
 
