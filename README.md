@@ -150,7 +150,7 @@ For linear regression tests, use the following:
 		- NumericA_Column_Name
 		- NumericB_Column_Name
 
-This is file can be the same as Configs/combat.yaml, but it is not always the case. 
+This file can be the same as Configs/combat.yaml, but it is not always the case. 
 Therefore, 2 perhaps very similar config files are needed, to avoid more complex logic.
 
 
