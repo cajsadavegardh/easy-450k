@@ -105,7 +105,7 @@ Allows to define criteria to perform Combat batch correction
 Config example:
 
 	phenotype_file: Configs/phenotype_file.txt
-	batch_column: Batch_Column_Name
+	batch_column: Batch_Column_Name                     In the file it's called artificial_batch...???
 	sample_names_column: ID
 	covariates:
 	categorical:
