@@ -3,7 +3,7 @@ combat_results_path <- "Temp/combat_results.RData"
 analysis_config_path <- "Configs/analysis.yaml"
 
 # load analysis yaml
-analysis_params <- .get_analysis_params(analysis_config_path)
+analysis_params <- get_analysis_params(analysis_config_path)
 
 # load phenotypes
 pheno_config_path <- "Configs/phenotype_info.yaml"
