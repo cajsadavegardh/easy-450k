@@ -5,6 +5,7 @@ import subprocess as sp
 import yaml
 import shutil
 
+template_name = "illumina_450k.tmpl"
 template_extension = ".tmpl"
 scripts_dir_name = "Scripts"
 directory_template_line = '[directories]'
@@ -32,16 +33,16 @@ def section_message(section_name):
 # setup command line arguments
 parser = argparse.ArgumentParser(description='Initiate a new analysis project')
 parser.add_argument('project_name', type=str)
-parser.add_argument('template_name', nargs='?', type=str, default='standard')
+#parser.add_argument('template_name', nargs='?', type=str, default='standard')
 args = parser.parse_args()
 project_name = args.project_name
-template_name = args.template_name
+#
 
 # setup dirs where the files are saved to and loaded from
 program_dir = os.path.dirname(os.path.abspath(__file__))
 working_dir = os.getcwd()
 project_dir = os.path.join(working_dir, args.project_name)
-template_path = os.path.join(program_dir, "templates", template_name) + template_extension
+template_path = os.path.join(program_dir, "templates", template_name)
 
 # test if the path working_dir/project_name already exists (if it's a dir or a file - doesn't matter)
 if os.path.isdir(project_dir):
@@ -64,7 +65,7 @@ print(section_message("Forming directories:"))
 
 # go through all the files and create a subdir for each of them
 yaml_template = yaml.load(open(template_path))
-for directory in yaml_template['directories']:
+for directory in yaml_template['empty_dirs']:
     template_dir_path = os.path.join(project_dir, directory)
     print(creating_directory_message(os.path.join(project_name, directory)))
     os.mkdir(template_dir_path)
@@ -72,6 +73,14 @@ for directory in yaml_template['directories']:
 print()
 print(section_message("Creating files:"))
 
+# copy directory trees of dirs that contain files
+for file_dict in yaml_template['file_dirs']:
+    source = os.path.join(program_dir, file_dict['from'])
+    destination = os.path.join(project_dir, file_dict['to'])
+    print(creating_file_message(destination))
+    shutil.copytree(source, destination)
+
+# copy other files
 for file_dict in yaml_template['files']:
     source = os.path.join(program_dir, file_dict['from'])
     destination = os.path.join(project_dir, file_dict['to'])
@@ -87,6 +96,3 @@ if os.path.isdir(scripts_dir_path):
     sp.call(["git", "init"])
 
 print()
-
-
-

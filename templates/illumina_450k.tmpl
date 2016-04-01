@@ -1,9 +1,8 @@
 %YAML 1.2
 ---
 
-directories:
+empty_dirs:
 - Annotations/
-- Configs/
 - Logs/
 - Logs/CondorLogs/
 - Logs/RoutFiles/
@@ -12,27 +11,15 @@ directories:
 - QC/
 - Results/
 - RawData/
-- Scripts/
-- Scripts/R/
-- Scripts/Shell/
 - Temp/
 
+file_dirs:
+- { from : illumina_450k/Scripts, to : 'Scripts' }
+- { from : illumina_450k/Core_Package, to : 'Scripts/Core_Package' }
+- { from : illumina_450k/Configs, to : 'Configs' }
+
 files:
-- { from : files/illumina_450k/Makefile, to : 'Makefile' }
-- { from : files/illumina_450k/Readme.md, to : 'Readme.md' }
-- { from : files/illumina_450k/RProfile, to : '.Rprofile' }
-- { from : files/illumina_450k/Scripts/preprocessing.R, to : 'Scripts/preprocessing.R' }
-- { from : files/illumina_450k/Scripts/loading.R, to : 'Scripts/loading.R' }
-- { from : files/illumina_450k/Scripts/config.R, to : 'Scripts/config.R' }
-- { from : files/illumina_450k/Scripts/bmiq.R, to : 'Scripts/bmiq.R' }
-- { from : files/illumina_450k/Scripts/combat.R, to : 'Scripts/combat.R' }
-- { from : files/illumina_450k/Scripts/analysis.R, to : 'Scripts/analysis.R' }
-- { from : files/illumina_450k/Scripts/helpers.R, to : 'Scripts/helpers.R' }
-- { from : files/illumina_450k/Scripts/defaults.R, to : 'Scripts/defaults.R' }
-- { from : files/illumina_450k/Scripts/generate_knitr_report.R, to : 'Scripts/generate_knitr_report.R' }
-- { from : files/illumina_450k/Configs/bmiq.yaml, to : 'Configs/bmiq.yaml' }
-- { from : files/illumina_450k/Scripts/report.Rmd, to : 'report.Rmd' }
-- { from : files/illumina_450k/Configs/normalization.yaml, to : 'Configs/normalization.yaml' }
-- { from : files/illumina_450k/Configs/combat.yaml, to : 'Configs/combat.yaml' }
-- { from : files/illumina_450k/Configs/probe_filtering.yaml, to : 'Configs/probe_filtering.yaml' }
-- { from : files/illumina_450k/Configs/sample_filtering.yaml, to : 'Configs/sample_filtering.yaml' }
+- { from : illumina_450k/Makefile, to : 'Makefile' }
+- { from : illumina_450k/Readme.md, to : 'Readme.md' }
+- { from : illumina_450k/RProfile, to : '.Rprofile' }
+- { from : illumina_450k/report.Rmd, to : 'report.Rmd'}

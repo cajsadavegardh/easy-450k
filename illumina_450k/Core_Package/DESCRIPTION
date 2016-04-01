@@ -1,0 +1,21 @@
+Package: easy.450k.core
+Title: Analyzis of Illumina 450k Microarray Data (one line, title case)
+Version: 0.0.0.9000
+Authors@R: person("Petr", "Volkov", email = "petr.volkov@med.lu.se", role = c("aut", "cre"))
+Description: Defines a set of functions to create robust analytical pipelines for 450k array data
+Depends:
+    R (>= 3.2.2),
+    Biobase
+Imports:
+    lumi,
+    methylumi,
+    yaml,
+    functional,
+    RPMM,
+    foreach,
+    iterators,
+    doMC,
+    sva,
+    lambda.r
+License: MIT license (see LICENSE file)
+LazyData: true
