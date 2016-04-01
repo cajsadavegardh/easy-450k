@@ -1,3 +1,4 @@
+phenotype_file: Configs/phenotype_file.txt
 type: lm
 n_cores: 46
 covariates:
@@ -8,4 +9,3 @@ covariates:
     categorical:
         - Gender
         - T2D
-
