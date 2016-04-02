@@ -39,7 +39,7 @@ git clone https://github.com/petr-volkov/project-templates
 
 1. Create a new project
         
-        python3 ${path_to_cloned_repo}/python_templates.py new-450k-project illumina-450k
+        python3 ${path_to_cloned_repo}/easy_450k.py project_name
         
 2. Edit configuration files
 
