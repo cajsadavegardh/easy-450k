@@ -143,12 +143,12 @@ For linear regression tests, use the following:
 	n_cores: 46
 	covariates:
     numeric:
+		- NumericaA_Column_Name
+		- NumericB_Column_Name
+		- NumericC_Column_Name
+    categorical:
 		- CategoricalA_Column_Name
 		- CategoricalB_Column_Name
-		- CategoricalC_Column_Name
-    categorical:
-		- NumericA_Column_Name
-		- NumericB_Column_Name
 
 This is file can be the same as Configs/combat.yaml, but it is not always the case. 
 Therefore, 2 perhaps very similar config files are needed, to avoid more complex logic.
